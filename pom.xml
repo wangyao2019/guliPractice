@@ -4,6 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>service</module>
+        <module>common</module>
+        <module>common/service-base</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -12,9 +14,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.atguigu</groupId>
-    <artifactId>guli-parent</artifactId>
+    <artifactId>guliPractice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>guli-parent</name>
+    <name>guliPractice</name>
     <description>parent-project</description>
     <packaging>pom</packaging>
 
@@ -208,7 +210,6 @@
                 <artifactId>canal.client</artifactId>
                 <version>${canal.client.version}</version>
             </dependency>
-
 
         </dependencies>
     </dependencyManagement>
