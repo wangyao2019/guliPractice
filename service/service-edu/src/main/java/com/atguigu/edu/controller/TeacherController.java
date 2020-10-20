@@ -5,6 +5,7 @@ import com.atguigu.commonutils.R;
 import com.atguigu.edu.entity.Teacher;
 import com.atguigu.edu.query.TeacherQuery;
 import com.atguigu.edu.service.TeacherService;
+import com.atguigu.servicebase.handler.GuliExceptionHandler;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -89,16 +90,22 @@ public class TeacherController {
 
     //增加
     @ApiOperation(value = "新增讲师")
-    @PostMapping
+    @PostMapping("addNewTeacher")
     public R addNewTeacher(@ApiParam(name = "teacher", value = "讲师对象", required = true) @RequestBody Teacher teacher) {
-        int a = 10/0;
+        //异常模拟
+        try {
+            int a = 10 / 0;
+        } catch (Exception e) {
+            System.out.println("异常捕获");
+            throw new GuliExceptionHandler(20001, "GuliExceptionHandler自定义异常");
+        }
         teacherService.save(teacher);
         return R.success();
     }
 
     //根据ID查询
     @ApiOperation(value = "根据ID查询讲师")
-    @GetMapping("{id}")
+    @GetMapping("getTeacherByID/{id}")
     public R getTeacherByID(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable String id) {
         Teacher teacher = teacherService.getById(id);
         return R.success().data("teacher", teacher);
@@ -106,10 +113,9 @@ public class TeacherController {
 
     //根据ID修改
     @ApiOperation(value = "根据ID修改讲师")
-    @PutMapping("{id}")
+    @PutMapping("updateByID/{id}")
     public R updateByID(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable String id,
                         @ApiParam(name = "teacher", value = "讲师对象", required = true) @RequestBody Teacher teacher) {
-
         teacher.setId(id);
         teacherService.updateById(teacher);
         return R.success();
