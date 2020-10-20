@@ -1,6 +1,8 @@
 package com.atguigu.edu.service;
 
 import com.atguigu.edu.entity.Teacher;
+import com.atguigu.edu.query.TeacherQuery;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TeacherService extends IService<Teacher> {
 
+    void pageQuery(Page<Teacher> pageParam, TeacherQuery teacherQuery);
 }

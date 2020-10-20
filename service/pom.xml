@@ -123,6 +123,13 @@
             <artifactId>service-base</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <!--统一返回结果使用-->
+        <dependency>
+            <groupId>com.atguigu</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 
