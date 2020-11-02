@@ -50,7 +50,7 @@ public class TeacherController {
 
     //讲师逻辑删除功能
     @ApiOperation(value = "根据ID逻辑删除讲师")
-    @DeleteMapping("{id}")
+    @DeleteMapping("delete/{id}")
     public R removeById(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable String id) {
         boolean flag = teacherService.removeById(id);
         if (flag) {
@@ -93,12 +93,12 @@ public class TeacherController {
     @PostMapping("addNewTeacher")
     public R addNewTeacher(@ApiParam(name = "teacher", value = "讲师对象", required = true) @RequestBody Teacher teacher) {
         //异常模拟
-        try {
-            int a = 10 / 0;
-        } catch (Exception e) {
-            System.out.println("异常捕获");
-            throw new GuliExceptionHandler(20001, "GuliExceptionHandler自定义异常");
-        }
+//        try {
+//            int a = 10 / 0;
+//        } catch (Exception e) {
+//            System.out.println("异常捕获");
+//            throw new GuliExceptionHandler(20001, "GuliExceptionHandler自定义异常");
+//        }
         teacherService.save(teacher);
         return R.success();
     }
