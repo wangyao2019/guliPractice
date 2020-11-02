@@ -99,8 +99,14 @@ public class TeacherController {
 //            System.out.println("异常捕获");
 //            throw new GuliExceptionHandler(20001, "GuliExceptionHandler自定义异常");
 //        }
-        teacherService.save(teacher);
-        return R.success();
+        if (teacher.getName() != null && teacher.getCareer() != null && teacher.getIntro() != null && teacher.getLevel() != null && teacher.getSort() != null)
+        {
+            teacherService.save(teacher);
+            return R.success();
+        }
+        else {
+            return R.error().data("message","请补充完整数据");
+        }
     }
 
     //根据ID查询
