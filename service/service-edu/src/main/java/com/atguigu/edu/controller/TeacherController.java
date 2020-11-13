@@ -29,7 +29,7 @@ import java.util.Map;
  */
 @Api(consumes = "讲师管理")
 @RestController
-@RequestMapping("/edu/teacher")
+@RequestMapping("eduService/teacher")
 @CrossOrigin //跨域
 public class TeacherController {
 
