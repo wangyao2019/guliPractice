@@ -19,7 +19,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>guliPractice</name>
     <description>parent-project</description>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>1.8</java.version>
@@ -212,6 +212,7 @@
 
 
     <build>
+        <finalName>guliPractice</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
